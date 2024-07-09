@@ -1,0 +1,64 @@
+{% load static  %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}base{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'aplicacion/css/menuprincipal.css' %}">
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    <header>
+        <div class="logosena">
+            <img src="{% static 'aplicacion/iconos/sena.png.jpeg' %}" alt="" width="150px">
+        </div>
+        <h1></h1>
+    </header>
+    <div class="menu-container" style="float: inline-start;">
+        <button class="menu-toggle" onclick="click_menu()">Menú</button>
+        <nav id="menu" class="menu">
+            <ul>
+                <li><a href="{% url 'menuprincipal' %}">Menú Principal</a></li>
+                <li><a href="{% url 'informacion' %}">Información</a></li>
+                <li><a href="{% url 'agenda' %}">Agendar Cita</a></li>
+                <li><a href="{% url 'sintomas' %}">Relax Time</a></li>
+                <li><a href="{% url 'contacto' %}">Contacto</a></li>
+            </ul>
+        </nav>
+    </div>
+    {% block content %}
+
+    {% endblock %}
+    <section >
+
+        
+    </section>
+
+    <footer>
+        <img src="{% static 'aplicacion/iconos/WhatsApp Image 2024-05-07 at 3.38.21 PM.jpeg' %}" alt="" width="80px">
+
+        <div class="redes">
+            <img src="{% static 'aplicacion/iconos/instagram-logo-24.png' %}" alt="" width="25px"><a href="" >Instagram</a>
+            <br>
+            <img src="{% static 'aplicacion/iconos/whatsapp-logo-24.png' %}" alt="" width="25px"><a href="">WhatsApp</a>
+            <br>
+            <img src="{% static 'aplicacion/iconos/gmail-logo-24.png' %}" alt="" width="25px"><a href="">tecnofuturosolutiones@gmail.com</a>
+        </div>
+
+
+        <div class="politica">
+            <p>Politica y privacidad</p>
+        </div>
+
+    </footer>
+    <script src="{% static 'aplicacion/js/scripts.js' %}"></script>
+    {% block extra_js %}{% endblock %}
+</body>
+</html>
+
+
+
+
+

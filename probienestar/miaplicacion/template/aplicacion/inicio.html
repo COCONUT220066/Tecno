@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienestar_a_tu_lado</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'aplicacion/css/menuprincipal.css' %}">
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    <header>
+        <div class="logosena">
+            <img src="{% static 'aplicacion/iconos/sena.png.jpeg' %}" alt="" width="150px" " >
+        </div>
+        <h1 id="titulo">¡BIENVENIDO A BIENESTAR A LA MANO!</h1>
+    </header>
+
+    <section style="padding-top: 200px;">
+        <article>
+        <a href="{% url 'registro' %}"><button style="padding: 10px 50px;border-radius: 20px;
+            background-color: #ABFCB8; cursor: pointer; background-color:  #95ec95;">Registrar</button></a>
+        <br>
+        <br>
+        <br>
+        <a href="{% url 'ingreso' %}"><button style="padding: 10px 50px;border-radius: 20px;
+            background-color: #ABFCB8; cursor: pointer; background-color:  #95ec95;">Iniciar Sesión</button></a>
+        </article>
+    </section>
+
+    <footer>
+        <img src="{% static 'aplicacion/iconos/WhatsApp Image 2024-05-07 at 3.38.21 PM.jpeg' %}" alt="" width="80px">
+
+        <div class="redes">
+            <img src="{% static 'aplicacion/iconos/instagram-logo-24.png' %}" alt="" width="25px"><a href="" >Instagram</a>
+            <br>
+            <img src="{% static 'aplicacion/iconos/whatsapp-logo-24.png' %}" alt="" width="25px"><a href="">WhatsApp</a>
+            <br>
+            <img src="{% static 'aplicacion/iconos/gmail-logo-24.png' %}" alt="" width="25px"><a href="">tecnofuturosolutiones@gmail.com</a>
+        </div>
+
+
+        <div class="politica">
+            <p>Politica y privacidad</p>
+        </div>
+
+    </footer>
+</body>
+</html>
