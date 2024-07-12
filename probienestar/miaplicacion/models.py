@@ -1,25 +1,4 @@
 from django.db import models
-from django.contrib.auth.models import AbstractUser, Group, Permission
-
-class CustomUser(AbstractUser):
-    is_especialista = models.BooleanField(default=False)
-    is_usuario = models.BooleanField(default=False)
-    
-    groups = models.ManyToManyField(
-        Group,
-        related_name='customuser_set',  # Cambia related_name para evitar conflictos
-        blank=True,
-        help_text='The groups this user belongs to.',
-        verbose_name='groups',
-    )
-    user_permissions = models.ManyToManyField(
-        Permission,
-        related_name='customuser_set',  # Cambia related_name para evitar conflictos
-        blank=True,
-        help_text='Specific permissions for this user.',
-        verbose_name='user permissions',
-    )
-
 
 
 class Administrador(models.Model):
@@ -169,6 +148,48 @@ class Especialistas(models.Model):
     class Meta:
         managed = False
         db_table = 'especialistas'
+
+
+class MiaplicacionCustomuser(models.Model):
+    id = models.BigAutoField(primary_key=True)
+    password = models.CharField(max_length=128)
+    last_login = models.DateTimeField(blank=True, null=True)
+    is_superuser = models.IntegerField()
+    username = models.CharField(unique=True, max_length=150)
+    first_name = models.CharField(max_length=150)
+    last_name = models.CharField(max_length=150)
+    email = models.CharField(max_length=254)
+    is_staff = models.IntegerField()
+    is_active = models.IntegerField()
+    date_joined = models.DateTimeField()
+    is_especialista = models.IntegerField()
+    is_usuario = models.IntegerField()
+
+    class Meta:
+        managed = False
+        db_table = 'miaplicacion_customuser'
+
+
+class MiaplicacionCustomuserGroups(models.Model):
+    id = models.BigAutoField(primary_key=True)
+    customuser = models.ForeignKey(MiaplicacionCustomuser, models.DO_NOTHING)
+    group = models.ForeignKey(AuthGroup, models.DO_NOTHING)
+
+    class Meta:
+        managed = False
+        db_table = 'miaplicacion_customuser_groups'
+        unique_together = (('customuser', 'group'),)
+
+
+class MiaplicacionCustomuserUserPermissions(models.Model):
+    id = models.BigAutoField(primary_key=True)
+    customuser = models.ForeignKey(MiaplicacionCustomuser, models.DO_NOTHING)
+    permission = models.ForeignKey(AuthPermission, models.DO_NOTHING)
+
+    class Meta:
+        managed = False
+        db_table = 'miaplicacion_customuser_user_permissions'
+        unique_together = (('customuser', 'permission'),)
 
 
 class Usuario(models.Model):

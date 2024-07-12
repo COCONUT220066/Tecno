@@ -1,7 +1,9 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from .forms import UsuarioForm,CustomUserCreationForm
 from django.contrib.auth.decorators import login_required
-from .models import Usuario
-from .forms import UsuarioForm
+from django.contrib.auth import authenticate,login
+from django.contrib import messages
+
 
 
 # Create your views here.
@@ -15,22 +17,24 @@ def inicio(request):
 def ingreso(request):
     return render(request, 'ingreso.html')
 
-def dashboard(request):
-    if request.user.is_especialista:
-        return redirect('hola.html')
-    else:
-        return redirect('inicio')
-    
-def especialista_dashboard(request):
-    return render(request, 'hola.html')
 
 
 def registro(request):
     data= {
-        'form': UsuarioForm()
+        'form': CustomUserCreationForm()
         }
-    return render(request, 'registro.html', data)
+    if request.method == 'POST':
+        formulario=CustomUserCreationForm(data=request.POST)
+        if formulario.is_valid():
+            formulario.save()
+            user=authenticate(username=formulario.cleaned_data["username"], password=formulario.cleaned_data["password"])
+            login(request,user)
+            messages.success(request,"te has registrado correctamente")
+            return redirect (to="menuprincipal")
+        data["form"]=formulario
+    return render(request, 'registration/registro.html', data)
 
+@login_required
 def menuprincipal(request):
     return render(request, 'menuprincipal.html')
 

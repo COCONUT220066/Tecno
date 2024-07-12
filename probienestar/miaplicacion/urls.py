@@ -14,6 +14,4 @@ urlpatterns = [
     path('agenda/', views.agenda, name='agenda'),
     path('informacion/', views.informacion, name='informacion'),
     path('sintomas/', views.sintomas, name='sintomas'),
-    path('dashboard/', views.dashboard, name='dashboard'),
-    path('especialista_dashboard/', views.especialista_dashboard, name='especialista_dashboard'),
 ]
