@@ -55,8 +55,8 @@ ROOT_URLCONF = 'probienestar.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['C:/Users/anaga/probienestar/miaplicacion/template/aplicacion'],
-        'APP_DIRS': True,
+        'DIRS': ['D:/repositorio proyecto/Tecno/probienestar/miaplicacion/template/aplicacion'],
+        'APP_DIRS': True, 
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',

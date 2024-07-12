@@ -12,48 +12,12 @@
 
     <section>
         <div class="formulario">
-            <form action="" >
-                <table>
-                    <tr>
-                        <td><label for="">correo electronico</label></td>
-                    </tr>
-                    
-                    <tr>
-                        <td><input type="email"></td>
-                    </tr>
-                    <tr>
-                        <td ><label for="">Registro</label></td>
-                    </tr>
-                    <tr>
-                        <td>
-                        <select name="" class="seleccion">
-                            <option value="">Cédula de Ciudadanía</option>
-                            <option value="">Cédula de Extranjería</option>
-                            <option value="">Tarjeta de Identidad</option>
-                        </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><label for="">Número de Documento</label></td>
-                    </tr>
-                    
-                    <tr>
-                        <td><input type="number"></td>
-                    </tr>
+            <form action="" method="post">
 
-                    <tr>
-                        <td><label for="">Contraseña</label></td>
-                    </tr>
-                    <tr>
-                        <td><input type="password" ></td>
-                    </tr>
-                    <tr>
-                        <td><label for="">Confirmar Contraseña</label></td>
-                    </tr>
-                    <tr>
-                        <td><input type="password"></td>
-                    </tr>
-                </table>
+                {% csrf_token %}
+                {{ form }}
+            
+                <button type="submit">Guardar</button>
             </form>
         </div>
         <div class="boton">
