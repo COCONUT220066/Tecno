@@ -12,15 +12,34 @@
 
     <section>
         <div class="formulario">
-            <form action="" method="post">
+            <form action="" method="POST">
 
                 {% csrf_token %}
                 {{ form }}
             
-            </form>
-        </div>
-        <div class="boton">
-            <a href="{% url 'ingreso' %}"><button>Iniciar Sesion</button></a>
+            
+            <h2>Registrate</h2>
+            {% if form.errors %}
+            <p class="is-size-5">
+            Usuario ya exitente
+            </p>
+            {% else %}
+            {% endif %}  
+
+            <label for="username">Usuario</label>
+            <input type="text" name="username" placeholder="Nombre" required>
+
+            <label for="email">Email</label>
+            <input type="email" name="email" placeholder="@gmail.com" required>
+    
+            <label for="password">Contraseña</label>
+            <input type="password" name="password" placeholder="" required>
+
+            <label for="first_name">Primer nombre</label>
+            <input type="text" name="first_name" placeholder="Direccion de casa" required>
+
+            <button class="boton" type="submit" >Registrate</button>
+            </form>       
         </div>
     </section>
     

@@ -127,7 +127,6 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-AUTHENTICATION_BACKENDS = [
-    'miaplicacion.views.CustomBackend',  # Reemplaza 'tu_app' con el nombre de tu aplicación
-    'django.contrib.auth.backends.ModelBackend',
-]
+LOGIN_REDIRECT_URL= 'menuprincipal'
+LOGIN_URL = 'login'
+LOGOUT_URL = ''

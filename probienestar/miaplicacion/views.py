@@ -1,8 +1,8 @@
-from django.shortcuts import render, redirect, get_object_or_404
-from .forms import UsuarioForm,CustomUserCreationForm
+from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate,login
-from django.contrib import messages
+from .forms import Loginform,register
+
 
 
 
@@ -14,25 +14,38 @@ def inicio(request):
     return render(request, 'inicio.html')
 
 
-def ingreso(request):
-    return render(request, 'ingreso.html')
-
-
-
-def registro(request):
-    data= {
-        'form': CustomUserCreationForm()
-        }
-    if request.method == 'POST':
-        formulario=CustomUserCreationForm(data=request.POST)
+def login(request):
+    if request.method=='POST':
+        print(request.POST)
+        formulario= Loginform(request.POST)
         if formulario.is_valid():
-            formulario.save()
-            user=authenticate(username=formulario.cleaned_data["username"], password=formulario.cleaned_data["password"])
-            login(request,user)
-            messages.success(request,"te has registrado correctamente")
-            return redirect (to="menuprincipal")
-        data["form"]=formulario
-    return render(request, 'registration/registro.html', data)
+            cd = formulario.cleanead_data
+            username= formulario.cleaned_data["username"]
+            password=formulario.cleaned_data["password"]
+            user =authenticate (request, username=username, password=password)
+        if user is not None:
+            if user.is__activate:
+                login(request= user)
+        else: 
+            return render(request, 'registration/login.html' , {'formulario':formulario, 'error': 'Usuario o contraseña incorrectos'} )
+    else:
+        formulario=Loginform()
+        return render(request, 'resgistration/login.html', {'formulario': formulario})
+            
+def registro(request):
+    if request.method == 'POST':
+        print(request.POST)
+        formulario = register(request.POST)
+        if formulario.is_valid():
+            new_user = formulario.save(commit=False)
+            new_user.set_password(formulario.cleaned_data['password'])
+            new_user.save()
+            return redirect('login')
+        return render(request, 'registration/registro.html', {'formulario':formulario,'auth_error': 'Autenticación fallida'})
+    else:
+        formulario= register()
+    return render(request, 'registration/registro.html', {'formulario': formulario})
+
 
 @login_required
 def menuprincipal(request):

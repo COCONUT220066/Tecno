@@ -1,69 +1,60 @@
-*{
-    margin: 0;
+*{margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;}
+
+body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative; 
+}  
+
+.organizacion{width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(black),(white);
+    position: relative;
+    padding: 0 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-header h1{
-    background-color: #ABFCB8;
-    border-radius: 20px;
-    padding: 50px;
-    margin: 20px 400px 0px 20px;
-}
-header h1 img{
-    float: right;
-    margin: -85px -10px 0 80px;
-    display: block;
-    
+.centrado {text-align: center;
 }
 
-article{
-    
-    text-align: center;
-    padding: 200px;
-    
+.centrado h1 {font-size: 40px;
+font-weight: 300px;
+font-family: 'Times New Roman', Times, serif;
+transition: 0.5s;}
+
+.centrado h1:hover{-webkit-text-stroke: 2px white;
+color: transparent}
+
+.centrado a {text-decoration: none;
+display: inline-block;
+color: black;
+font-size: 15px;
+font-family: Arial, Helvetica, sans-serif;
+border: 2px solid rgb(223, 215, 215);
+padding: 10px 70px;
+border-radius: 50px;
+margin-top: 20px;;
 }
 
-article button{
-    padding: 10px 50px;
-    border-radius: 20px;
-    background-color: #ABFCB8;
-    
-}
-article button a{
-    color: black;
-}
-
-article button:hover{
-    cursor: pointer;
-    background-color:  #00FF00;
-}
-
-footer{
-    box-shadow: #ABFCB8 0px -80px 30px;
-    color: black;
-}
-.redes{
-    text-align: left;
-}
-.politica{
-    float: right;
-}
-
-footer a{
-    color: black;
-}
-footer img{
-    float: left;
-}
-
-.logosena{
-    float: right;
-    margin: 0px 100px 0px 0px;
-}
-
-#titulo{
-    background-image: url("iconos/triangulos.png");
-    background-repeat: no-repeat;
-    background-position: right;
-    background-size: 25% 85%;
+.videito{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
 }

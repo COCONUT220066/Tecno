@@ -1,11 +1,14 @@
 from django import forms
-from .models import Usuario
-from django.contrib.auth.forms import UserCreationForm
 
-class UsuarioForm(forms.ModelForm):
+from django.contrib.auth.models import User
+
+class Loginform(forms.Form): 
+    username= forms.CharField()
+    password= forms.CharField(widget=forms.PasswordInput)
+
+class register(forms.ModelForm):
+    password = forms.CharField(label='password' ,widget=forms.PasswordInput)
+    
     class Meta: 
-        model = Usuario
-        fields = ['correo_u','idusuario','nombre','contacto','ficha','contraseña']
-
-class CustomUserCreationForm(UserCreationForm):
-    pass        
+        model = User
+        fields = ['username', 'first_name', 'email']

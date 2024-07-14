@@ -5,16 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bienestar_a_la_mano</title>
     {% load static %}
-    <link rel="stylesheet" href="{% static 'aplicacion/css/menuprincipal.css' %}">
+    <link rel="stylesheet" href="{% static 'aplicacion/css/inicio.css' %}">
     {% block extra_css %}{% endblock %}
 </head>
 <body>
-    <header>
-        <div class="logosena">
-            <img src="{% static 'aplicacion/iconos/sena.png.jpeg' %}" alt="" width="150px" " >
+
+    <div class="organizacion">
+        <video autoplay loop muted plays-inline class="videito">
+            <source src="{% static 'aplicacion/iconos/videosena.mp4' %}" type="video/mp4">
+        </video>
+
+        <div class="centrado">
+            <h1>¡Bienvenido a bienestar a tu lado!</h1>
+            <a href="{% url 'registro' %}"><button>Registrar</button></a>
+            <br>
+            <br>
+            <br>
+            <a href="{% url 'login' %}"><button>Iniciar Sesión</button></a>
         </div>
-        <h1 id="titulo">¡BIENVENIDO A BIENESTAR A LA MANO!</h1>
-    </header>
+            </div>
 
     <section style="padding-top: 200px;">
         <article>
@@ -23,7 +32,7 @@
         <br>
         <br>
         <br>
-        <a href="{% url 'ingreso' %}"><button style="padding: 10px 50px;border-radius: 20px;
+        <a href="{% url 'login' %}"><button style="padding: 10px 50px;border-radius: 20px;
             background-color: #ABFCB8; cursor: pointer; background-color:  #95ec95;">Iniciar Sesión</button></a>
         </article>
     </section>
@@ -44,6 +53,68 @@
             <p>Politica y privacidad</p>
         </div>
 
-    </footer>
+    </footer> HOLAAAA COSTE
 </body>
+<style>
+    *{margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;}
+
+body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative; 
+}  
+
+.organizacion{width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(black),(white);
+    position: relative;
+    padding: 0 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.centrado {text-align: center;
+}
+
+.centrado h1 {font-size: 40px;
+font-weight: 300px;
+font-family: 'Times New Roman', Times, serif;
+transition: 0.5s;}
+
+.centrado h1:hover{-webkit-text-stroke: 2px white;
+color: transparent}
+
+.centrado a {text-decoration: none;
+display: inline-block;
+color: black;
+font-size: 15px;
+font-family: Arial, Helvetica, sans-serif;
+border: 2px solid rgb(223, 215, 215);
+padding: 10px 70px;
+border-radius: 50px;
+margin-top: 20px;;
+}
+
+.videito{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
+</style>
 </html>
