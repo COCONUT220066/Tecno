@@ -47,7 +47,7 @@ def registro(request):
     return render(request, 'registration/registro.html', {'formulario': formulario})
 
 
-@login_required
+
 def menuprincipal(request):
     return render(request, 'menuprincipal.html')
 
@@ -57,11 +57,10 @@ def recuperar(request):
 def agenda(request):
     return render(request, 'agenda.html')
 
-def contacto(request):
-    return render(request, 'contacto.html')
 
-def sintomas(request):
-    return render(request, 'sintomas.html')
-
+@login_required
 def informacion(request):
     return render(request, 'informacion.html')
+
+def contacto(request):
+    return render(request, 'contacto.html')
