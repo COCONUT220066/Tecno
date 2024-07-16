@@ -62,7 +62,7 @@
             <img src="https://picsum.photos/id/399/1920/500" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
               <h5>Haz entrado al sitio web destinado a la salud mental de los aprendices</h5>
-              <p>En colaboracion con los psicologos y miembros del Bienestar al aprendiz del centro de convivencia La Salada, puedes programar tu cita </p>
+              <p>En colaboracion con los psicologos y miembros del Bienestar al aprendiz del centro de convivencia La Salada</p>
             </div>
           </div>
           <div class="carousel-item" data-bs-interval="2000">
@@ -96,19 +96,20 @@
         <h2 class="text-center my-5">¿Que es este sitio web?</h2>
         <div class="contenido">
             <div class="row">
-                <div class="col-6">
-                    <p>La ansiedad es un sentimiento de miedo, temor e inquietud. Esta puede ser una reacción normal al estrés. Se tiene en cuenta que este sentimiento tambien puede ayudarte a enfrentar una situación o darte impulso de energía o ayudar a concentrarse.
+                <div class="col-6" style="padding: 80px;" >
+                    Bienestar a la Mano es una plataforma integral diseñada para apoyar el bienestar emocional y psicológico de los aprendices del Centro La Salada. A través de nuestra aplicación, ofrecemos una variedad de recursos y el acceso a servicios de apoyo emocional. Nuestra misión es proporcionar un entorno seguro y accesible donde los usuarios puedan encontrar el apoyo necesario para mejorar su salud mental y bienestar general. Con una interfaz intuitiva, Bienestar a la Mano se convierte en el aliado perfecto para promover un equilibrio saludable entre el aprendizaje y el bienestar personal.
 
-                    </p>
+                </p>
                 </div>
                 <div class="col-6">
-                    <img src="{% static 'aplicacion/iconos/1.jpg' %}" alt="" width=80% height=110%>
+                    <img src="{% static 'aplicacion/iconos/1.jpg' %}" alt="" width=70% height=90%>
                 </div>
             </div>
         </div>
         <br>
         <br>
         <br>
+        <hr class="mb-4">
 <section class="encontrar my-5">
     <h2 class="text-center my-5">¿Que puedes encontrar?</h2>
     <div class="contenido">
@@ -141,7 +142,7 @@
                     <div class="card-body">
                       <h5 class="card-title">Informacion acerca de salud mental
                       </h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <p class="card-text">Toda la informacion necesaria para conocer mas sobre transtornos.</p>
                       <a href="{% url 'registro' %}" class="btn btn-primary text-center" style="background-color: rgb(126, 209, 106); border-color: rgb(3, 179, 3);">Registrate aqui para ver mas</a>
                     </div>
                   </div>
@@ -157,7 +158,7 @@
             <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
                 <h5 class="text-uppercase mb-4 font-weight-bold text-primary">Quienes somos</h5>
                     <hr class="mb-4">
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus similique magnam asperiores quibusdam a quasi, nulla tempora ea at voluptas mollitia recusandae nostrum magni, optio eum, repellat vitae commodi reiciendis!</p>
+                    <p>Somos aprendices que desarrollaron un proyecto de software que implica la creacion de esta maravillosa pagina web destinada a informar sobre trastornos psicológicos comunes en estudiantes, la cual será implementada en el SENA.</p>
             </div>
                     <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
                         <h5 class="text-uppercase mb-4 font-weight-bold text-primary">¿Deseas conocer mas?</h5>
@@ -219,10 +220,14 @@
 </html>
 <style>
 
-.contenedor {
+.contenedor{
         background-color: rgb(145, 209, 180);
     }
 
+    .contenedor .row .col-6 p {
+        text-align: center;
+        font-family: 'Times New Roman', Times, serif;
+    }
 .encontrar{
     text-align: center;
     line-height: 2em;    

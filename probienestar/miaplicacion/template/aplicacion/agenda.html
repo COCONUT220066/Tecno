@@ -4,13 +4,14 @@
     
     {% block extra_css %}
     {% load static  %}
-        <link rel="stylesheet" href="{% static 'menuprincipal/css/style.css' %}">
 
     
 
     {% endblock %}
     
     {% block content %}
+    <body>
+        
     <section class="carrusel">
         <div id="carouselExampleDark" class="carousel carousel-dark slide">
             <div class="carousel-indicators">
@@ -20,9 +21,9 @@
             </div>
             <div class="carousel-inner">
               <div class="carousel-item active" data-bs-interval="10000">
-                <img src="https://picsum.photos/id/399/1920/500" class="d-block w-100" alt="...">
+                <img src="https://picsum.photos/id/129/1920/500" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
-                  <h5>Sitio web pensado en los aprendices del SENA</h5>
+                  <h5>Seccion para agendar cita con tu psicologo de referencia</h5>
                   <p>En colaboracion con los psicologos y miembros del Bienestar al aprendiz del centro de convivencia La Salada, puedes programar tu cita </p>
                 </div>
               </div>
@@ -57,7 +58,7 @@
 <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
 <!-- Calendly inline widget end -->
 
-
+</body>
     {% endblock %}
     <style>
 img {
@@ -81,6 +82,7 @@ img {
             justify-content: center;
             align-items: center;
             position: relative;
+            background-color: rgba(128, 128, 128, 0.61);
             
         }
     </style>

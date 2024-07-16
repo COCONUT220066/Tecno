@@ -49,11 +49,11 @@
                 </div>
                 <div class="usuario">
                     {% if request.user.is_authenticated %}
-                    <strong><p>Bienvenido, {{request.user.username|default:request.user.username }}</p></strong>
-                   <div class="cerrar"><strong><a href="{% url 'inicio' %}">Cerrar sesión</a></strong></div> 
+                    <strong><p>Bienvenido, {{request.user.username|default:request.user.username }}</p></strong></div>
+                   <div class="cerrar"><strong><a href="{% url 'inicio' %}">Salir</a></strong></div> 
                         {% endif %}
                     {% endif %}
-                </div>
+                
               </nav>
     </div>
     </header>
@@ -211,11 +211,14 @@
     padding: 0.9rem;
 
 }
-.usuario a{
+.usuario {
     color: rgb(13, 85, 13);
-    text-decoration: none;
 }
 
-
+.cerrar a{
+    color: black;
+    padding-left: 15px;
+    text-decoration: none;
+}
 
 </style>
