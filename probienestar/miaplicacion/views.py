@@ -2,6 +2,10 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate,login
 from .forms import Loginform,register
+from django.contrib import messages
+from django.conf import settings
+from django.core.mail import send_mail
+from .models import Usuario, AuthUser
 
 
 
@@ -31,7 +35,32 @@ def login(request):
     else:
         formulario=Loginform()
         return render(request, 'resgistration/login.html', {'formulario': formulario})
-            
+
+
+# def registro(request):
+#     if request.method == 'POST':
+#         print(request.POST)
+#         formulario = register(request.POST)
+#         if formulario.is_valid():
+#             new_user = formulario.save(commit=False)
+#             new_user.set_password(formulario.cleaned_data['password'])
+#             new_user.save()
+#             nombre = formulario.cleaned_data.get('nombre')
+#             correo_u = formulario.cleaned_data.get('email')
+#             subject = 'Registro en bienestar a la mano'
+#             message = f'{nombre}, ¡Bienvenid@ a Bienestar a la mano'
+#             from_email = settings.EMAIL_HOST_USER
+#             recipient_list = [correo_u]
+
+#             send_mail(subject, message, from_email, recipient_list)
+
+#             messages.success(request, "Registro exitoso. Hemos enviado un correo de bienvenida a tu dirección.")
+#             return redirect('login')
+#         return render(request, 'registration/registro.html', {'formulario':formulario,'auth_error': 'Autenticación fallida'})
+#     else:
+#         formulario= register()
+#     return render(request, 'registration/registro.html', {'formulario': formulario})
+
 def registro(request):
     if request.method == 'POST':
         print(request.POST)
@@ -40,11 +69,24 @@ def registro(request):
             new_user = formulario.save(commit=False)
             new_user.set_password(formulario.cleaned_data['password'])
             new_user.save()
+
+            # Obtenemos el nombre y correo del formulario
+            username = formulario.cleaned_data.get('username')
+            correo_u = formulario.cleaned_data.get('email')
+
+            subject = 'Registro en bienestar a la mano'
+            message = f'{username}, ¡Bienvenid@ a Bienestar a la mano!'
+            from_email = settings.EMAIL_HOST_USER
+            recipient_list = [correo_u]
+
+            send_mail(subject, message, from_email, recipient_list)
+            messages.success(request, "Registro exitoso. Hemos enviado un correo de bienvenida a tu dirección.")
             return redirect('login')
         return render(request, 'registration/registro.html', {'formulario':formulario,'auth_error': 'Autenticación fallida'})
     else:
-        formulario= register()
+        formulario = register()
     return render(request, 'registration/registro.html', {'formulario': formulario})
+
 
 
 

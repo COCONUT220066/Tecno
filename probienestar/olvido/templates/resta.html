@@ -1,0 +1,151 @@
+    {% load static %}
+
+    {% block title %}
+    <br>
+    <br>
+    {% endblock %}
+
+    {% block content %}
+    <h1>Restablecer contraseña</h1>
+    {% if messages %}
+        <div class="alert alert-info text-center">
+        {% for message in messages %}
+            <div>{{ message }}</div>
+        {% endfor %}
+        </div>
+    {% endif %}
+    <div class="form-container">
+        <form method="post">
+        {% csrf_token %}
+        <input type="hidden" name="uid" value="{{ username }}">
+        <input type="hidden" name="token" value="{{ token }}">
+        <div class="form-group">
+            <label for="password">Nueva contraseña:</label>
+            <input type="password" name="password" id="password" required>
+        </div>
+        <div class="form-group">
+            <label for="confirm_password">Confirmar contraseña:</label>
+            <input type="password" name="confirm_password" id="confirm_password" required>
+        </div>
+        <button type="submit" class="btn btn-custom">Restablecer contraseña</button>
+        </form>
+    </div>
+    <style>        /* Style for the forgot password page */
+        body {
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .form-container {
+            background: #d9d9d9;
+            width: 90%;
+            max-width: 750px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 5px solid;
+            border-image: linear-gradient(to bottom left, #FF1500, #BB21D3, #F1172A, #BF21C6, #F0182F) 1;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .titulo-olvide {
+            font-family: 'jokerman', cursive;
+            font-size: 25px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .icono {
+            display: block;
+            margin: 0 auto 20px;
+            width: 80px;
+            height: 80px;
+        }
+
+        .parrafo-olvide {
+            font-size: 20px;
+            font-family: 'Pompiere', cursive;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .form-control {
+        height: 8px;
+        width: 300px;
+        padding: 10px;
+        border-radius: 5px;
+        margin-left: 40px;
+        }
+
+        .btn-primary {
+            background-color: #DD68C3;
+            border-radius: 5px;
+            color: #000;
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-left: 320px;
+            margin-top: 40px;
+        }
+
+        .btn-primary:hover {
+            background-color: #C80A9D;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: #000;
+            text-decoration: none;
+        }
+
+        .close-btn svg {
+            vertical-align: middle;
+        }
+
+        .recomendacion{
+            color: #007bff;
+            margin-top: 20px;
+            margin-left: 270px;
+        }
+
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .titulo-olvide {
+                font-size: 1.5rem;
+            }
+
+            .icono {
+                width: 60px;
+                height: 60px;
+            }
+
+            .parrafo-olvide {
+                font-size: 18px;
+            }
+
+            .btn-primary {
+                padding: 8px 16px;
+                font-size: 0.9rem;
+                margin-left: 260px;
+            }
+
+            .recomendacion{
+            margin-top: 20px;
+            margin-left: 205px;
+
+        }
+
+            .close-btn {
+                top: 10px;
+                right: 10px;
+            }
+        }
+
+    </style>
+    {% endblock %}

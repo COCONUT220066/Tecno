@@ -5,3 +5,4 @@ from . import models
 admin.site.register(models.Usuario)
 admin.site.register(models.Especialistas)
 admin.site.register(models.Citas)
+admin.site.register(models.AuthUser)
