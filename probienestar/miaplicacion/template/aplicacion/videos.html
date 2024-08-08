@@ -47,9 +47,70 @@
           <span class="visually-hidden">Next</span>
         </button>
       </div>
+      <section class="video-wrapper left">
+        <div class="video">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/RXKabdUBiWM?si=XZoyJqDEsl-paiTa" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <div class="text">
+            <h2>Título del primer video</h2>
+            <p>Descripción del primer video. Aquí puedes escribir sobre el contenido del video.</p>
+        </div>
     </section>
-    <section>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/RXKabdUBiWM?si=XZoyJqDEsl-paiTa" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <section class="video-wrapper right">
+        <div class="text">
+            <h2>Título del segundo video</h2>
+            <p>Descripción del segundo video. Aquí puedes escribir sobre el contenido del video.</p>
+        </div>
+        <div class="video">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/IhD1JoZA33o?si=vNtSHwhI-SbwsVMS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
     </section>
+    
+    
+    <style>
+.video-wrapper {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    padding: 0 10px;
+}
 
+.video {
+    flex: 1;
+}
+
+.text {
+    flex: 1;
+    padding: 0 20px;
+}
+
+.left .video {
+    order: 1;
+}
+
+.left .text {
+    order: 2;
+}
+
+.right .video {
+    order: 2;
+}
+
+.right .text {
+    order: 1;
+}
+
+/* Asegúrate de que los videos sean responsivos */
+@media (max-width: 768px) {
+    .video-wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .text {
+        padding: 10px 0;
+    }
+}
+
+    </style>
 {% endblock %}

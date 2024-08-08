@@ -1,119 +1,153 @@
 {% extends 'base.html' %}
 
-{% block title %}consejos{% endblock %}
+{% block title %}Consejos{% endblock %}
 
 {% block extra_css %}
-{% load static  %}
+{% load static %}
+<style>
+    /* CSS adicional para ajustar el diseño a diferentes tamaños de pantalla */
+    @media (max-width: 767.98px) {
+        .carousel-caption h5 {
+            font-size: 16px;
+        }
 
+        .sub {
+            font-size: 14px;
+        }
+
+        .contenido p {
+            font-size: 14px;
+        }
+
+        .contenido img {
+            width: 100%;
+            height: auto;
+        }
+
+        .encontrar {
+            text-align: center;
+        }
+    }
+
+    @media (min-width: 768px) and (max-width: 991.98px) {
+        .carousel-caption h5 {
+            font-size: 20px;
+        }
+
+        .sub {
+            font-size: 16px;
+        }
+
+        .contenido p {
+            font-size: 16px;
+        }
+    }
+
+    .carousel-caption h5 {
+        font-size: 24px;
+    }
+
+    .contenido p {
+        font-size: 18px;
+    }
+</style>
 {% endblock %}
+
 {% block content %}
-
-
 <section class="carrusel">
     <div id="carouselExampleDark" class="carousel carousel-dark slide">
         <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
         <div class="carousel-inner">
-          <div class="carousel-item active" data-bs-interval="10000">
-            <img src="https://picsum.photos/id/22/1920/500" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Educate con nuestra seccion de consejos</h5>
+            <div class="carousel-item active" data-bs-interval="10000">
+                <img src="https://picsum.photos/id/22/1920/500" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Educate con nuestra sección de consejos</h5>
+                </div>
             </div>
-          </div>
-          <div class="carousel-item" data-bs-interval="2000">
-            <img src="https://picsum.photos/id/17/1920/500" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Second slide label</h5>
-              <p>Some representative placeholder content for the second slide.</p>
+            <div class="carousel-item" data-bs-interval="2000">
+                <img src="https://picsum.photos/id/17/1920/500" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Second slide label</h5>
+                    <p>Some representative placeholder content for the second slide.</p>
+                </div>
             </div>
-          </div>
-          <div class="carousel-item">
-            <img src="https://picsum.photos/id/18/1920/500" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Third slide label</h5>
-              <p>Some representative placeholder content for the third slide.</p>
+            <div class="carousel-item">
+                <img src="https://picsum.photos/id/18/1920/500" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Third slide label</h5>
+                    <p>Some representative placeholder content for the third slide.</p>
+                </div>
             </div>
-          </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
         </button>
         <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
         </button>
-      </div>
-    </section>
-    <section class="encontrar my-5">
-        <h5 class="sub">En este apartado encuentras algunos consejos prácticos para manejar la ansiedad, la depresión y el estrés basados en fuentes confiables como la Organización Mundial de la Salud (OMS) y la Asociación Americana de Psicología (APA)</h5>
-        <h2 class="text-center my-5">Consejos para Manejar la Ansiedad</h2>
-        <div class="contenido">
-            <div class="row">
-                <div class="col-6">
-                    <h2 class="sub"></h2>
-                    <p>Ejercicio Regular: Participar en actividades físicas regularmente puede ayudar a reducir los síntomas de ansiedad. El ejercicio libera endorfinas, que son sustancias químicas en el cerebro que mejoran el estado de ánimo y actúan como analgésicos naturales.
-                    </p>
-                    <p>Técnicas de Relajación: Practicar la meditación, el yoga o ejercicios de respiración profunda puede ayudar a calmar la mente y reducir los niveles de ansiedad.
-                    </p>
-                    <p>Dormir lo Suficiente: Asegúrate de dormir lo necesario. La falta de sueño puede exacerbar los síntomas de ansiedad y dificultar el manejo de las emociones.
-                    </p>
-                    <p>Alimentación Saludable: Mantener una dieta equilibrada rica en frutas, verduras y granos integrales puede tener un impacto positivo en tu bienestar mental.
-                    </p>
-                    <p>Evitar el Alcohol y la Cafeína: Estos pueden aumentar los síntomas de ansiedad. Intenta limitarlos o evitarlos por completo.
-                    </p>
-                </div>
+    </div>
+</section>
 
-                <div class="col-6">
-                    <img src="{% static 'aplicacion/iconos/ansi.png' %}" alt="" width=100% height=70%>
-                </div>
+<section class="encontrar my-5">
+    <h5 class="sub text-center mb-5">
+        En este apartado encuentras algunos consejos prácticos para manejar la ansiedad, la depresión y el estrés basados en fuentes confiables como la Organización Mundial de la Salud (OMS) y la Asociación Americana de Psicología (APA).
+    </h5>
+
+    <h2 class="text-center my-5">Consejos para Manejar la Ansiedad</h2>
+    <div class="contenido">
+        <div class="row">
+            <div class="col-md-6 col-12 mb-4">
+                <p>Ejercicio Regular: Participar en actividades físicas regularmente puede ayudar a reducir los síntomas de ansiedad. El ejercicio libera endorfinas, que son sustancias químicas en el cerebro que mejoran el estado de ánimo y actúan como analgésicos naturales.</p>
+                <p>Técnicas de Relajación: Practicar la meditación, el yoga o ejercicios de respiración profunda puede ayudar a calmar la mente y reducir los niveles de ansiedad.</p>
+                <p>Dormir lo Suficiente: Asegúrate de dormir lo necesario. La falta de sueño puede exacerbar los síntomas de ansiedad y dificultar el manejo de las emociones.</p>
+                <p>Alimentación Saludable: Mantener una dieta equilibrada rica en frutas, verduras y granos integrales puede tener un impacto positivo en tu bienestar mental.</p>
+                <p>Evitar el Alcohol y la Cafeína: Estos pueden aumentar los síntomas de ansiedad. Intenta limitarlos o evitarlos por completo.</p>
+            </div>
+            <div class="col-md-6 col-12 mb-4">
+                <img src="{% static 'aplicacion/iconos/ansi.png' %}" alt="Consejos para manejar la ansiedad" class="img-fluid">
             </div>
         </div>
+    </div>
 
-        <hr class="mb-4">
-        <h2 class="text-center my-5">Consejos para Manejar la Depresión</h2>
-            <div class="contenido">
-                <div class="row">
-                    <div class="col-6">
-                        <p>Hablar con Alguien: Hablar con un amigo de confianza, familiar o terapeuta puede ser muy beneficioso. La conexión social puede proporcionar apoyo emocional y ayudar a aliviar los sentimientos de depresión.
-                        </p>
-                        <p>Establecer Metas Realistas: Divide las tareas grandes en pasos más pequeños y concéntrate en cumplir metas alcanzables. Esto puede ayudarte a no sentirte abrumado y a aumentar la sensación de logro.
-                        </p>
-                        <p>Mantener una Rutina: Tener un horario diario puede proporcionar estructura y estabilidad, ayudando a combatir la sensación de caos y falta de control.
-                        </p>
-                        <p>Realizar Actividades que Disfrutes: Participar en actividades que solías disfrutar, incluso cuando no te apetezca, puede ayudar a mejorar tu estado de ánimo.
-                        </p>
-                    </div>
+    <hr class="mb-4">
 
-                    <div class="col-6">
-                        <img src="{% static 'aplicacion/iconos/quitar.png' %}" alt="" width=80% height=90%>
-                    </div>
-                </div>
+    <h2 class="text-center my-5">Consejos para Manejar la Depresión</h2>
+    <div class="contenido">
+        <div class="row">
+            <div class="col-md-6 col-12 mb-4">
+                <p>Hablar con Alguien: Hablar con un amigo de confianza, familiar o terapeuta puede ser muy beneficioso. La conexión social puede proporcionar apoyo emocional y ayudar a aliviar los sentimientos de depresión.</p>
+                <p>Establecer Metas Realistas: Divide las tareas grandes en pasos más pequeños y concédele a cumplir metas alcanzables. Esto puede ayudarte a no sentirte abrumado y a aumentar la sensación de logro.</p>
+                <p>Mantener una Rutina: Tener un horario diario puede proporcionar estructura y estabilidad, ayudando a combatir la sensación de caos y falta de control.</p>
+                <p>Realizar Actividades que Disfrutes: Participar en actividades que solías disfrutar, incluso cuando no te apetezca, puede ayudar a mejorar tu estado de ánimo.</p>
             </div>
-            <hr class="mb-4">
-            <h2 class="text-center my-5">Consejos para Manejar el Estrés</h2>
-            <div class="contenido">
-                <div class="row">
-                    <div class="col-6">
-                        <p>Identificar los Desencadenantes: Reconocer las situaciones que te estresan te permite manejarlas mejor. Considera mantener un diario de estrés para identificar patrones y desarrollar estrategias de afrontamiento.
-                        </p>
-                        <p>Practicar la Atención Plena (Mindfulness): La práctica de la atención plena puede ayudar a mantenerte centrado en el presente y reducir los pensamientos negativos.
-                        </p>
-                        <p>Tomarse Descansos Regulares: Durante el trabajo o el estudio, asegúrate de tomar descansos para evitar el agotamiento.
-                        </p>
-                        <p>Establecer Límites: Aprende a decir no cuando te sientas sobrecargado y establece límites para proteger tu tiempo personal.
-                        </p>
-                        <p>Buscar Ayuda Profesional: Si el estrés se vuelve inmanejable, considera buscar ayuda profesional. Un psicólogo o terapeuta puede ofrecerte herramientas y técnicas para enfrentar el estrés de manera más efectiva.</p>
-                    </div>
-                    <div class="col-6">
-                        <img src="{% static 'aplicacion/iconos/estres.png' %}" alt="" width=100% height=100%>
-                    </div>
-                </div>
+            <div class="col-md-6 col-12 mb-4">
+                <img src="{% static 'aplicacion/iconos/quitar.png' %}" alt="Consejos para manejar la depresión" class="img-fluid">
             </div>
-    
-    </section>
+        </div>
+    </div>
 
+    <hr class="mb-4">
+
+    <h2 class="text-center my-5">Consejos para Manejar el Estrés</h2>
+    <div class="contenido">
+        <div class="row">
+            <div class="col-md-6 col-12 mb-4">
+                <p>Identificar los Desencadenantes: Reconocer las situaciones que te estresan te permite manejarlas mejor. Considera mantener un diario de estrés para identificar patrones y desarrollar estrategias de afrontamiento.</p>
+                <p>Practicar la Atención Plena (Mindfulness): La práctica de la atención plena puede ayudar a mantenerte centrado en el presente y reducir los pensamientos negativos.</p>
+                <p>Tomarse Descansos Regulares: Durante el trabajo o el estudio, asegúrate de tomar descansos para evitar el agotamiento.</p>
+                <p>Establecer Límites: Aprende a decir no cuando te sientas sobrecargado y establece límites para proteger tu tiempo personal.</p>
+                <p>Buscar Ayuda Profesional: Si el estrés se vuelve inmanejable, considera buscar ayuda profesional. Un psicólogo o terapeuta puede ofrecerte herramientas y técnicas para enfrentar el estrés de manera más efectiva.</p>
+            </div>
+            <div class="col-md-6 col-12 mb-4">
+                <img src="{% static 'aplicacion/iconos/estres.png' %}" alt="Consejos para manejar el estrés" class="img-fluid">
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock %}
