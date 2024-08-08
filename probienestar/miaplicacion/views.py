@@ -17,6 +17,11 @@ def base(request):
 def inicio(request):
     return render(request, 'inicio.html')
 
+def consejos(request):
+    return render(request, 'consejos.html')
+
+def videos(request):
+    return render(request, 'videos.html')
 
 def login(request):
     if request.method=='POST':
