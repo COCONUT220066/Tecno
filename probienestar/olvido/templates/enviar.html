@@ -1,17 +1,114 @@
 {% load static %}
 
 {% block title %}
-<br>
-<br>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-image: url();
+}
+
+.form-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    background-color: rgba(255, 255, 255, 0.438);
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+    width: 300px;
+    max-width: 100%;
+    z-index: 2;
+}
+
+p {
+    text-align: center;
+}
+
+h2.titulo-recuperar {
+    text-align: center;
+    padding-bottom: 25%;
+    color: #000000;
+    margin-bottom: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+input[type="email"],
+input[type="text"],
+input[type="password"] {
+    width: calc(100% - 2px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.btn-custom {
+    width: 50%;
+    padding: 10px;
+    background-color: rgb(126, 209, 106);
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-sizing: border-box;
+    display: block; 
+    margin: 0 auto; 
+}
+
+.btn-custom:hover {
+    background-color: rgb(177, 231, 164);
+}
+
+.link a {
+    text-decoration: none;
+    color: rgb(82, 74, 74);
+}
+
+img {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
+</style>
 {% endblock %}
 
 {% block content %}
-    <h1 class="titulo-recuperar">Restablecer Contraseña</h1>
-    <div class="form-container">
-        <form id="reset-form" method="post">
+<body>
+    <img src="{% static 'aplicacion/iconos/manos.jpg' %}" alt="">
+    
+    <div class="form-container" >
+        <form id="reset-form" method="post" >
+            <h2 class="titulo-recuperar">Restablecer Contraseña</h2>
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit" class="btn btn-custom">Enviar correo</button>
+        <button type="submit" class="btn-custom">Enviar correo</button>
         </form>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -25,114 +122,5 @@
         }
         };
     </script>
-    <style>        
-    /* ESTILOS */
-
-    body {
-        background-color: #f0f2f5;
-        margin: 0;
-        padding: 0;
-        font-family: 'Roboto', sans-serif;
-    }
-
-    .form-container {
-        background: #d9d9d9;
-        width: 90%;
-        max-width: 600px;
-        margin: 50px auto;
-        padding: 20px;
-        border: 5px solid;
-        border-image: linear-gradient(to bottom left, #FF1500, #BB21D3, #F1172A, #BF21C6, #F0182F) 1;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        position: relative;
-        overflow: auto;
-    }
-
-    .titulo-recuperar {
-        font-family: jokerman;
-        font-size: 30px;
-        text-align: center;
-        margin-bottom: 2.3rem;
-    }
-
-    .icono {
-        display: block;
-        margin: 0 auto 20px;
-        width: 80px;
-        height: 80px;
-    }
-
-    .formulario_input {
-        height: 50px;
-        width: 100%;
-        padding: 10px;
-        border-radius: 5px;
-        border: 1px solid #ced4da;
-        margin-bottom: 1rem;
-    }
-
-    .btn-primary {
-        font-family: 'Pompiere', cursive;
-        font-size: 1.5rem;
-        background-color: #DD68C3;
-        color: #000;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        display: block;
-        margin: 20px;
-        transition: background-color 0.3s;
-    }
-
-    .btn-primary:hover {
-        background-color: #C80A9D;
-    }
-
-    .error {
-        display: none;
-        color: red;
-        font-size: 0.875rem;
-    }
-
-    .nav-buttons {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-top: 20px;
-    }
-
-    .salir {
-        color: #007bff;
-        text-decoration: none;
-        display: flex;
-        align-items: center;
-        margin-left: 30px;
-        width: 35px;
-        height: 35px;
-    }
-
-    .salir svg {
-        vertical-align: middle;
-    }
-
-    /* RESPONSIVO */
-    @media (max-width: 768px) {
-        .titulo-recuperar {
-            font-size: 1.25rem;
-        }
-
-        .icono {
-            width: 60px;
-            height: 60px;
-        }
-
-        .btn-primary {
-            font-size: 1.25rem;
-            padding: 8px 16px;
-        }
-    }
-
-    </style>
+</body>
 {% endblock %}

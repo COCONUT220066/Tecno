@@ -8,6 +8,7 @@ from django.contrib import messages
 from .models import AuthUser
 from .tokens import custom_token_generator
 from .functions import send_mail_google, refresh_google_token
+from django.contrib.auth.hashers import make_password
 
 
 
@@ -47,27 +48,24 @@ class EnviarMensaje(FormView):
         return super().form_valid(form)
 
 
-
-
 def resta(request, username, token):
     usuario = get_object_or_404(AuthUser, username=username)
+
+    if not custom_token_generator.check_token(usuario, token):
+        messages.error(request, 'El enlace de restablecimiento no es válido o ha expirado.')
+        return redirect('password_reset')
 
     if request.method == 'POST':
         password = request.POST.get('password')
         confirm_password = request.POST.get('confirm_password')
 
-        # Depuración: Imprimir tipos de datos y valores
-        print(f"Tipo de password: {type(password)}, Valor: {password}")
-        print(f"Tipo de confirm_password: {type(confirm_password)}, Valor: {confirm_password}")
-
         if password == confirm_password:
-            usuario.password = password
-            print(f"Tipo de usuario.contrasenia: {type(usuario.password)}, Valor: {usuario.password}")
-            usuario.save()
+            # Usar el método corregido para cifrar la contraseña
+            usuario.actualizar_contrasenia(password)
             messages.success(request, 'Restablecimiento Exitoso')
             return redirect('login')
         else:
             messages.error(request, 'Las contraseñas no coinciden.')
-            return redirect('resta', username=username, token=token)
+            return render(request, 'resta.html', {'username': username, 'token': token})
 
     return render(request, 'resta.html', {'username': username, 'token': token})
