@@ -126,7 +126,7 @@ def registro(request):
                 send_mail(subject, message, from_email, recipient_list)
                 messages.success(request, "Registro exitoso. Hemos enviado un correo de bienvenida a tu dirección.")
             except Exception as e:
-                # Manejar errores de envío de correo, como problemas de conexión SMTP
+                # Manejar errores de envio de correo, como problemas de conexion SMTP
                 messages.error(request, f"Registro exitoso, pero ocurrió un problema al enviar el correo de bienvenida: {e}")
 
             return redirect('login')  # Redirigir a la página de inicio de sesión después del registro
