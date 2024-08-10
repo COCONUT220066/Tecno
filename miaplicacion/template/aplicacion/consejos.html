@@ -1,0 +1,137 @@
+{% extends 'base.html' %}
+
+{% block title %}Consejos{% endblock %}
+
+{% block extra_css %}
+{% load static %}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+    /* CSS adicional para ajustar el diseño a diferentes tamaños de pantalla */
+    @media (max-width: 767.98px) {
+        .carousel-caption h5 {
+            font-size: 16px;
+        }
+
+        .sub {
+            font-size: 14px;
+        }
+
+        .contenido p {
+            font-size: 14px;
+        }
+
+        .contenido img {
+            width: 100%;
+            height: auto;
+        }
+
+        .encontrar {
+            text-align: center;
+        }
+    }
+
+    @media (min-width: 768px) and (max-width: 991.98px) {
+        .carousel-caption h5 {
+            font-size: 20px;
+        }
+
+        .sub {
+            font-size: 16px;
+        }
+
+        .contenido p {
+            font-size: 16px;
+        }
+    }
+
+    .carousel-caption h5 {
+        font-size: 24px;
+    }
+
+    .contenido p {
+        font-size: 18px;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<section class="carrusel">
+    <div id="carouselExampleDark" class="carousel carousel-dark slide">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="10000">
+                <img src="https://picsum.photos/id/847/1920/500" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Educate con nuestra sección de consejos</h5>
+                    <p> En este apartado encuentras algunos consejos prácticos para manejar la ansiedad, la depresión y el estrés basados en fuentes confiables como la Organización Mundial de la Salud (OMS) y la Asociación Americana de Psicología (APA).</p>
+                </div>
+            </div>
+
+            </div>
+        </div>
+
+
+</section>
+
+<section class="encontrar my-5">
+
+
+    <h2 class="text-center my-5">Consejos para Manejar la Ansiedad</h2>
+    <div class="contenido">
+        <div class="row">
+            <div class="col-md-6 col-12 mb-4">
+                <p>Ejercicio Regular: Participar en actividades físicas regularmente puede ayudar a reducir los síntomas de ansiedad. El ejercicio libera endorfinas, que son sustancias químicas en el cerebro que mejoran el estado de ánimo y actúan como analgésicos naturales.</p>
+                <p>Técnicas de Relajación: Practicar la meditación, el yoga o ejercicios de respiración profunda puede ayudar a calmar la mente y reducir los niveles de ansiedad.</p>
+                <p>Dormir lo Suficiente: Asegúrate de dormir lo necesario. La falta de sueño puede exacerbar los síntomas de ansiedad y dificultar el manejo de las emociones.</p>
+                <p>Alimentación Saludable: Mantener una dieta equilibrada rica en frutas, verduras y granos integrales puede tener un impacto positivo en tu bienestar mental.</p>
+                <p>Evitar el Alcohol y la Cafeína: Estos pueden aumentar los síntomas de ansiedad. Intenta limitarlos o evitarlos por completo.</p>
+            </div>
+            <div class="col-md-6 col-12 mb-4">
+                <img src="{% static 'aplicacion/iconos/image1.png' %}" alt="Consejos para manejar la ansiedad" class="img-fluid">
+            </div>
+        </div>
+    </div>
+
+    <hr class="mb-4">
+
+    <h2 class="text-center my-5">Consejos para Manejar la Depresión</h2>
+    <div class="contenido">
+        <div class="row">
+            <div class="col-md-6 col-12 mb-4">
+                <p>Hablar con Alguien: Hablar con un amigo de confianza, familiar o terapeuta puede ser muy beneficioso. La conexión social puede proporcionar apoyo emocional y ayudar a aliviar los sentimientos de depresión.</p>
+                <p>Establecer Metas Realistas: Divide las tareas grandes en pasos más pequeños y concédele a cumplir metas alcanzables. Esto puede ayudarte a no sentirte abrumado y a aumentar la sensación de logro.</p>
+                <p>Mantener una Rutina: Tener un horario diario puede proporcionar estructura y estabilidad, ayudando a combatir la sensación de caos y falta de control.</p>
+                <p>Realizar Actividades que Disfrutes: Participar en actividades que solías disfrutar, incluso cuando no te apetezca, puede ayudar a mejorar tu estado de ánimo.</p>
+            </div>
+            <div class="col-md-6 col-12 mb-4">
+                <img src="{% static 'aplicacion/iconos/image2.png' %}" alt="Consejos para manejar la depresión" class="img-fluid">
+            </div>
+        </div>
+    </div>
+
+    <hr class="mb-4">
+
+    <h2 class="text-center my-5">Consejos para Manejar el Estrés</h2>
+    <div class="contenido">
+        <div class="row">
+            <div class="col-md-6 col-12 mb-4">
+                <p>Identificar los Desencadenantes: Reconocer las situaciones que te estresan te permite manejarlas mejor. Considera mantener un diario de estrés para identificar patrones y desarrollar estrategias de afrontamiento.</p>
+                <p>Practicar la Atención Plena (Mindfulness): La práctica de la atención plena puede ayudar a mantenerte centrado en el presente y reducir los pensamientos negativos.</p>
+                <p>Tomarse Descansos Regulares: Durante el trabajo o el estudio, asegúrate de tomar descansos para evitar el agotamiento.</p>
+                <p>Establecer Límites: Aprende a decir no cuando te sientas sobrecargado y establece límites para proteger tu tiempo personal.</p>
+                <p>Buscar Ayuda Profesional: Si el estrés se vuelve inmanejable, considera buscar ayuda profesional. Un psicólogo o terapeuta puede ofrecerte herramientas y técnicas para enfrentar el estrés de manera más efectiva.</p>
+            </div>
+            <div class="col-md-6 col-12 mb-4">
+                <img src="{% static 'aplicacion/iconos/image.png' %}" alt="Consejos para manejar el estrés" class="img-fluid">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Bootstrap JS and Popper.js -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+{% endblock %}

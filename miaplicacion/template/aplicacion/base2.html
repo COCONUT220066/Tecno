@@ -1,0 +1,47 @@
+{% load static  %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}base22{% endblock %}</title>
+    {% load static %}  <!-- Cargar la biblioteca de etiquetas estáticas -->
+    <link rel="stylesheet" href="{% static 'aplicacion/css/base.css' %}">
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+
+        <div class="content">
+            {% block content %}
+
+            {% endblock %}
+
+            <footer class="pie">
+                <div class="grupo1">
+                    <div class="box">
+                        <figure>
+                            <img src="" alt="logo">
+                            </a>
+                        </figure>
+                    </div>
+                    <div class="box">
+                        <h2>SOBRE NOSOTROS</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita dignissimos, voluptatibus cumque quibusdam, vel cupiditate dolorem distinctio, incidunt voluptates delectus minus quos? Laudantium, ratione cumque? A aperiam perferendis ipsa voluptate?</p>
+                    <div class="redes">
+                        <img src="{% static 'aplicacion/iconos/instagram-logo-24.png' %}" alt="" width="25px"><a href="" >Instagram</a>
+                        <br>
+                        <img src="{% static 'aplicacion/iconos/whatsapp-logo-24.png' %}" alt="" width="25px"><a href="">WhatsApp</a>
+                        <br>
+                        <img src="{% static 'aplicacion/iconos/gmail-logo-24.png' %}" alt="" width="25px"><a href="">tecnofuturosolutiones@gmail.com</a>
+                    </div>
+                    <div class="grupo2">
+                        <small>&copy; 2024 <b>Bienestar A Tu Lado</b> - Todos Los Derechos Reservados</small>
+        
+                    </div>
+                </div>
+            </footer>
+
+<script src="{% static 'aplicacion/js/scripts.js' %}"></script>
+            {% block extra_js %}{% endblock %}
+</body>
+</html>

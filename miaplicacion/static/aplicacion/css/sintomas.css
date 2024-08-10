@@ -1,0 +1,89 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.logosena{
+    float: right;
+    margin: 0px 100px 0px 0px;
+}
+header h1{
+    background-color: #ABFCB8;
+    border-radius: 20px;
+    padding: 50px;
+    margin: 0px 400px 0px 20px;
+}
+footer{
+    box-shadow: #ABFCB8 0px -80px 30px;
+    color: black;
+}
+.redes{
+    text-align: left;
+}
+.politica{
+    float: right;
+}
+
+footer a{
+    color: black;
+}
+footer img{
+    float: left;
+}
+section{
+    padding: 250px;
+}
+
+article{
+    background-color: #ABFCB8;
+    color: black;
+    padding: 30px;
+    border-radius: 20px;
+    margin: 20px 300px 0px 300px;
+    text-align: center;
+
+}
+.menu-container {
+    position: relative;
+    width: 200px;
+    padding: 20px;
+    
+}
+
+.menu-toggle {
+    background-color: #ABFCB8;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 20px;
+}
+
+.menu {
+    display: none;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    margin-top: 5px;
+}
+
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu ul li {
+    border-bottom: 1px solid #ddd;
+}
+
+.menu ul li a {
+    display: block;
+    padding: 10px;
+    color: #333;
+    text-decoration: none;
+}
+
+.menu ul li a:hover {
+    background-color: #ABFCB8;
+    color: black;
+}

@@ -1,0 +1,158 @@
+{% extends 'base.html' %}
+
+{% block title %}informacion{% endblock %}
+
+{% block extra_css %}
+{% load static %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+{% endblock %}
+
+
+{% block content %}
+<section class="carrusel">
+    <div id="carouselExampleDark" class="carousel carousel-dark slide">
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="10000">
+                <img src="https://picsum.photos/id/680/1920/500" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Educate con nuestra sección informativa</h5>
+                    <p>Distingue tus síntomas</p>
+                </div>
+            </div>
+            
+            </div>
+</section>
+
+<section class="encontrar my-5">
+    <h2 class="text-center my-5">La ansiedad</h2>
+    <div class="contenido">
+        <div class="row">
+            <div class="col-md-6 col-12 mb-4">
+                <p>La ansiedad es un sentimiento de miedo, temor e inquietud. Esta puede ser una reacción normal al estrés. Se tiene en cuenta que este sentimiento también puede ayudarte a enfrentar una situación o darte impulso de energía o ayudar a concentrarse.</p>
+                <h2 class="sub">¿Qué son los trastornos de ansiedad?</h2>
+                <p>Son afecciones en las que la ansiedad no desaparece y puede empeorar con el tiempo. Estos síntomas se pueden ver reflejados con las actividades diarias, desempeño en el trabajo, escuela o relaciones entre personas.</p>
+                <h2 class="sub">¿Cuáles son los tipos de trastornos de ansiedad?</h2>
+                <p>- Trastorno de ansiedad generalizada: Este es donde las personas se preocupan por problemas comunes como la salud, dinero, trabajo y familia. Pero estas enfermedades son excesivas y la tienen casi todos los días.</p>
+                <p>- Trastorno de pánico: Sufren ataques de pánico. Estos son repentinos y repetidos momentos de miedo intenso sin haber un peligro aparente.</p>
+                <p>- Fobias: En este caso son las personas que tienen un miedo intenso a algo que representa un poco o ningún peligro real.</p>
+                <h2 class="sub">¿Qué causa los trastornos de ansiedad?</h2>
+                <p>Factores como la genética, el estrés y su entorno pueden jugar un rol.</p>
+                <h2 class="sub">¿Quién está en riesgo de tener trastornos de ansiedad?</h2>
+                <p>El trastorno de ansiedad generalizada y las fobias son más comunes en las mujeres, pero la ansiedad social afecta a hombres y mujeres por igual.</p>
+                <h2 class="sub">¿Cuáles son los síntomas de los trastornos de ansiedad?</h2>
+                <p>- Pensamientos o creencias ansiosos difíciles de controlar.</p>
+                <p>- Síntomas físicos, como latidos cardíacos fuertes o rápidos, dolores y molestias inexplicables.</p>
+                <p>- Cambios en el comportamiento.</p>
+                <h2 class="sub">¿Cómo se diagnostican los trastornos de ansiedad?</h2>
+                <p>Para diagnosticarlos se puede acudir a un profesional de la salud. También es posible hacer un examen físico y pruebas de laboratorio.</p>
+                <h2 class="sub">¿Cuáles son los tratamientos para los trastornos de ansiedad?</h2>
+                <p>- Psicoterapia: Puede ayudar a reconocer y cambiar emociones, pensamientos y conductas.</p>
+                <p>- Terapia cognitivo-conductual: Enseña diferentes formas de pensar y comportarse.</p>
+                <p>- Terapia de aceptación y compromiso: Puede ayudar con algunos trastornos de ansiedad.</p>
+                <p>- Los medicamentos: Para tratar los trastornos de ansiedad incluyen medicamentos contra la ansiedad y ciertos antidepresivos.</p>
+            </div>
+            <div class="col-md-6 col-12">
+                <img src="{% static 'aplicacion/iconos/ansi.png' %}" alt="" class="img-fluid">
+            </div>
+        </div>
+    </div>
+    <hr class="mb-4">
+    <h2 class="text-center my-5">La depresión</h2>
+    <div class="contenido">
+        <div class="row">
+            <div class="col-md-6 col-12 mb-4">
+                <p>Esta se puede descubrir como el hecho de estar triste, melancólico, infeliz o derrumbado. La depresión clínica es un trastorno del estado anímico en el cual los sentimientos de tristeza, pérdida, ira o frustración interfieren en la vida diaria.</p>
+                <h2 class="sub">Consideraciones</h2>
+                <p>La depresión puede suceder en personas de todas las edades. Los síntomas de depresión incluyen: <br>
+                - Agitación, inquietud, irritabilidad, ira <br>
+                - Volverse retraído o aislarse <br>
+                - Fatiga y falta de energía <br>
+                - Sentimiento de impotencia, culpabilidad y odio a sí mismo.</p>
+                <h2 class="sub">Tipos de depresión principales:</h2>
+                <p>- Depresión mayor: Sucede cuando los sentimientos interfieren en la vida diaria. <br>
+                - Trastorno depresivo persistente: Se trata de un ánimo depresivo que dura 2 años. <br>
+                También se incluyen: <br>
+                - Depresión posparto, Trastorno disfórico premenstrual, Trastorno afectivo estacional, Depresión mayor con características psicóticas y Trastorno bipolar.</p>
+                <h2 class="sub">Causas:</h2>
+                <p>La depresión a menudo se transmite de padres a hijos, esto puede deberse a los genes. <br>
+                Factores que pueden causar la depresión: Alcoholismo o consumo de drogas, situaciones o hechos estresantes en la vida, aislamiento social.</p>
+                <h2 class="sub">¿Cuándo contactar a un profesional médico?</h2>
+                <p>- Escuchar voces que no existen <br>
+                - Llorar con frecuencia sin una causa <br>
+                - Afectar su vida laboral, escolar o familiar</p>
+                <h2 class="sub">Nombres alternativos:</h2>
+                <p>- Melancolía <br>
+                - Tristeza <br>
+                - Pesadumbre <br>
+                - Desesperanza</p>
+            </div>
+            <div class="col-md-6 col-12">
+                <img src="{% static 'aplicacion/iconos/quitar.png' %}" alt="" class="img-fluid">
+            </div>
+        </div>
+    </div>
+    <hr class="mb-4">
+    <h2 class="text-center my-5">El estrés</h2>
+    <div class="contenido">
+        <div class="row">
+            <div class="col-md-6 col-12 mb-4">
+                <p>Es la forma en que el cerebro y el cuerpo responden a un desafío o exigencia. Cuando está estresado, su cuerpo libera ciertas hormonas. No todo el estrés es malo, de hecho puede ayudar a sobrevivir a situaciones peligrosas, pero el estrés que dura mucho puede dañar la salud.</p>
+                <h2 class="sub">¿Qué causa el estrés?</h2>
+                <p>- Estrés de rutina: Debido al exceso de trabajo, escuela, necesidades familiares, problemas económicos y otras presiones diarias. <br>
+                - Estrés por cambios repentinos y difíciles en su vida: Como divorcios, enfermedades, pérdida de trabajo. <br>
+                - Estrés traumático: Puede ocurrir cuando está en peligro de sufrir un daño grave o la muerte.</p>
+                <h2 class="sub">¿Cómo puede dañar mi salud el estrés?</h2>
+                <p>- Enfermarse con más frecuencia de lo habitual <br>
+                - Tener problemas para digerir alimentos <br>
+                - Tener problemas para dormir <br>
+                - Tener dolores de cabeza <br>
+                - Sentirse triste, enojado o molesto con facilidad.</p>
+                <h2 class="sub">¿Cómo puedo manejar el estrés?</h2>
+                <p>- Hacer ejercicio con regularidad <br>
+                - Realizar actividades relajantes <br>
+                - Dormir lo suficiente todas las noches <br>
+                - Evitar demasiada cafeína <br>
+                - Decidir qué debe hacer ahora y qué puede esperar.</p>
+                <h2 class="sub">¿Cuándo debo pedirle ayuda a un profesional de la salud?</h2>
+                <p>- Problemas de insomnio <br>
+                - Cambios en la alimentación <br>
+                - Problemas para levantarse de la cama debido a su estado de ánimo <br>
+                - Dificultad para enfocar sus pensamientos</p>
+            </div>
+            <div class="col-md-6 col-12">
+                <img src="{% static 'aplicacion/iconos/estres.png' %}" alt="" class="img-fluid">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Bootstrap JS and Popper.js -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<style>
+    .contenido {
+        font-size: 15px;
+    }
+    .sub {
+        font-size: 26px;
+    }
+    @media (max-width: 767.98px) {
+        .sub {
+            font-size: 22px;
+        }
+        .contenido {
+            font-size: 14px;
+        }
+    }
+    @media (min-width: 768px) and (max-width: 991.98px) {
+        .sub {
+            font-size: 24px;
+        }
+        .contenido {
+            font-size: 15px;
+        }
+    }
+</style>
+{% endblock %}

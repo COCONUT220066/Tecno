@@ -1,0 +1,113 @@
+{% extends 'base.html' %}
+
+{% block title %}consejos{% endblock %}
+
+{% block extra_css %}
+{% load static  %}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+{% endblock %}
+{% block content %}
+
+
+<section class="carrusel">
+    <div id="carouselExampleDark" class="carousel carousel-dark slide">
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-bs-interval="10000">
+            <img src="https://picsum.photos/id/977/1920/500" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Educate con nuestra seccion de videos</h5>
+            </div>
+          </div>
+          </div>
+        </div>
+
+      </div>
+    <section class="conte" style="padding-top: 5%; padding-left: 5%; padding-right: 3%;">
+      <section class="video-wrapper left">
+        <div class="video">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/bmrfUfIlpEA?si=8VnrdrBCKu_iELL8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <div class="text">
+            <h2>Bienestar al aprendiz.</h2>
+            <p>Explica que es bienestar al aprendiz, sus objetivos y de lo que estan encargados.</p>
+        </div>
+    </section>
+    <section class="video-wrapper right">
+        <div class="text">
+            <h2>Video motivacional Bienestar al aprendiz.</h2>
+            <p>Expresa mas a fondo las actividades que se practican en bienestar al aprendiz para la salud mental de sus aprendices.</p>
+        </div>
+        <div class="video">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/IhD1JoZA33o?si=vNtSHwhI-SbwsVMS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    </section>
+    <section class="video-wrapper left">
+      <div class="video">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/kwMUjUsJjG8?si=PZVFwVOGlNt08_kh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <div class="text">
+          <h2>Bienestar al aprendiz psicologia.</h2>
+          <p>Juan David Paz, profesional en psicología y perteneciente al equipo de bienestar al aprendiz del SENA Centro Metalmecánico, nos ofrece una definición y comparte los beneficios que tiene la salud mental en el desarrollo de las actividades educativas, para los aprendices del SENA.</p>
+      </div>
+  </section>
+  <section class="video-wrapper right">
+      <div class="text">
+          <h2>Acompañamiento de Bienestar a los aprendices</h2>
+          <p>Desde el Centro de Tecnologías del Transporte, se realiza el acompañamiento por parte del área de Bienestar y sus profesionales a todos los aprendices, brindándoles un apoyo y guía durante todo su proceso de formación cuando lo necesiten.</p>
+      </div>
+      <div class="video">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/EPwOXr11jBk?si=0UXZhOFI8UPTnLXR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+  </section>
+</section>
+    
+<!-- Bootstrap JS and Popper.js -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+.video-wrapper {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    padding: 0 10px;
+}
+
+.video {
+    flex: 1;
+}
+
+.text {
+    flex: 1;
+    padding: 0 20px;
+}
+
+.left .video {
+    order: 1;
+}
+
+.left .text {
+    order: 2;
+}
+
+.right .video {
+    order: 2;
+}
+
+.right .text {
+    order: 1;
+}
+
+/* Asegúrate de que los videos sean responsivos */
+@media (max-width: 768px) {
+    .video-wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .text {
+        padding: 10px 0;
+    }
+}
+
+    </style>
+{% endblock %}

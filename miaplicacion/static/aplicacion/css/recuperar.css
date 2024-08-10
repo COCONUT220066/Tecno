@@ -1,0 +1,50 @@
+footer{
+    box-shadow: #ABFCB8 0px -100px 50px;
+    color: black;
+    margin: 250px 0px 0px 0px;
+}
+.redes{
+    text-align: left;
+}
+.politica{
+    float: right;
+}
+
+footer a{
+    color: black;
+}
+footer img{
+    float: left;
+}
+
+section div{
+    text-align: center;
+    width: 40%;
+    margin: 40px 0 0 400px;
+  }
+
+
+form label{
+    background-color: #ABFCB8;
+    border-radius: 20px;
+    padding: 10px;
+}
+form input{
+    background-color: #ABFCB8;
+    border-radius: 20px;
+    padding: 5px;
+}
+button{
+    float: right;
+    background-color: #ABFCB8;
+    padding: 10px;
+    border-radius: 20px;
+    margin: 80px 10px 10px 10px;
+}
+button a{
+    color: black;
+}
+button:hover{
+    background-color: #00FF00;
+    cursor: pointer;
+}
